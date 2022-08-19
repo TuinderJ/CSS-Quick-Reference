@@ -26,9 +26,11 @@ header p {
 }
 
 main {
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin: 1rem;
+  justify-items: center;
 }
 
 main div {
@@ -36,7 +38,7 @@ main div {
   border: dotted 2px var(--accent-color);
   padding: .5rem;
   gap: .5rem;
-  flex: 1 0 200px;
+  width: 300px;
   margin-bottom: .5rem;
   cursor: pointer;
   transition: box-shadow 200ms ease-in-out;
@@ -66,4 +68,12 @@ main div pre {
     rgba(50, 205, 50, 0.3) 0%,
     rgba(50, 205, 50, 0.6) 100%
   );
+}
+
+@media screen and (max-width: 880px) {
+  main {grid-template-columns: repeat(2, 1fr);}
+}
+
+@media screen and (max-width: 595px) {
+  main {grid-template-columns: repeat(1, 1fr);}
 }
